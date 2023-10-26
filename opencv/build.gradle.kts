@@ -149,7 +149,10 @@ android {
             path("$projectDir/libcxx_helper/CMakeLists.txt")
         }
     }
-
+    buildFeatures {
+        aidl = true
+        buildConfig = true
+    }
 }
 
 dependencies {
