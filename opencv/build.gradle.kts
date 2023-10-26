@@ -95,15 +95,14 @@ plugins {
 
 
 android {
-    compileSdkVersion(26)
-    namespace = "com.example.opencv"
+    compileSdk = 33
+    namespace = "org.opencv"
 
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(26)
 
 
-
+        minSdk = 24
+        targetSdk = 33
         externalNativeBuild {
             cmake {
                 arguments("-DANDROID_STL=c++_shared")
@@ -115,6 +114,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     buildTypes {
@@ -147,6 +149,7 @@ android {
             path("$projectDir/libcxx_helper/CMakeLists.txt")
         }
     }
+
 }
 
 dependencies {
